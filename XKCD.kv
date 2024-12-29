@@ -1,12 +1,19 @@
 #:kivy 2.3.1
 
 <XKCDLayout>:
+    orientation: 'vertical'
+    padding: dp(15)
+    spacing: dp(10)
     canvas.before:
         Color:
             rgba: 1 , 1 , 1 , 1
         Rectangle:
             pos: self.pos
             size: self.size
+    
+    MDButton:
+        
+
     MDLabel:
         size: self.texture_size
         text_size: self.size
@@ -16,10 +23,12 @@
         theme_text_color: "Custom"
         text_color: "black"
         theme_font_size: "Custom"
-        font_size: "24sp"
+        font_size: "32sp"
         theme_font_name: "Custom"
         font_name: "titlefont_bold.ttf"
 
     AsyncImage:
         source: root.image_url
-        size_hint: 1, 0.8
+        size_hint: 1, 0.9
+        allow_stretch: True
+        keep_ratio: True
