@@ -1,10 +1,25 @@
 #:kivy 2.3.1
 
 <XKCDLayout>:
-    theme_bg_color: "Custom"
-    bg_color: "blue"
+    canvas.before:
+        Color:
+            rgba: 1 , 1 , 1 , 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
     MDLabel:
+        size: self.texture_size
+        text_size: self.size
         text: "Random XKCD Viewer"
         halign: "center"
+        valign: "top"
         theme_text_color: "Custom"
-        text_color: "red"
+        text_color: "black"
+        theme_font_size: "Custom"
+        font_size: "24sp"
+        theme_font_name: "Custom"
+        font_name: "titlefont_bold.ttf"
+
+    AsyncImage:
+        source: root.image_url
+        size_hint: 1, 0.8
